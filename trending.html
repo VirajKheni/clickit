@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>ClickIt | Trending</title>
+	<link rel="stylesheet" type="text/css" href="assets/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/mycss.css">
+	<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="icon" href="assets/images/ClickIt.png">
+	<script type="text/javascript">
+ 		if(localStorage.username && localStorage.password)
+ 		{
+ 			// window.location.href = "C:/Users/01/Desktop/MCA/WT/Project/adv/trending.html";
+ 		}else {
+ 			window.location.href="file:///C:/Users/01/Desktop/Final/adv/index.html";
+ 			alert("Please Login First");
+ 		}
+ 	</script>
+</head>
+<body>
+	<!-- Top Header -->
+	<div class="container-fluid btn-danger">
+			<div class="row" style="padding-top: 12px;">
+				<div class="col-md-8">
+					<ul class="">
+	  					<li class="nav nav-item">Enjoy your favourite movie, TV show & video in a single subscription at $60</li>
+	    			</ul>
+				</div>
+				<div class="col-md-4 text-right">
+					<div class="row">
+						<div class="col-md-3 text-center col-xs-3">
+							<div class="btn-login " data-toggle="modal" data-target="#login"> 
+			  					<div>Login</div>
+			    			</div>
+			    			<div class="modal fade text-left" id="login" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+							  <div class="modal-dialog" role="document">
+							    <div class="modal-content">
+							      <div class="modal-header" style="color: black;">
+							        <h5 class="modal-title" id="exampleModalLabel">Login</h5>
+							        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							          <span aria-hidden="true">&times;</span>
+							        </button>
+							      </div>
+							      <form method="post" name="login-form" id="login-form">
+							      <div class="modal-body" style="color: black;">
+							        
+							          <div class="form-group">
+							            <label for="recipient-name" class="col-form-label">Login ID:</label>
+							            <input type="email" name="mail" class="form-control" id="mail" >
+										<p id="err_email" style="color: red;text-align: right;"></p>
+							          </div>
+							          <div class="form-group" >
+							            <label for="message-text" class="col-form-label" >Password:</label>
+							            <div style="position: relative;">
+								            <input type="password" name="pwd" class="form-control" id="pwd" >
+								            <div class="fa fa-eye show-pwd" ></div>
+							        	</div>
+							            <p id="err_pwd" style="color: red;text-align: right;"></p>
+							            <a href="" >Forget Password ?</a>
+
+							          </div>
+							        	<div class="form-group">
+										    <div class="form-check">
+										      <input class="form-check-input" type="checkbox" id="staylogin">
+										      <label class="form-check-label" for="staylogin">
+										        Stay logged in
+										      </label>
+										    </div>
+										 </div>
+										 
+							      </div>
+							      <div class="modal-footer" style="color: black;">
+							      		<div class="form-group" style="width:100%;">
+							        		<button type="button" id="login-btn" class="btn btn-success" style="width:100%;">Secure Login</button>
+							        	</div>
+							      </div>
+							      </form>
+							    </div>
+							  </div>
+							</div>
+						</div>
+						<div class="col-md-4 text-center col-xs-3">
+							<!-- Register Tag -->
+			    			<div class="btn-login" data-toggle="modal" data-target="#register"> 
+			  					<div>Register</div>
+			    			</div>
+			    			<div class="modal fade" id="register" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+							  <div class="modal-dialog" role="document">
+							    <div class="modal-content">
+							      <div class="modal-header" style="color: black;">
+							        <h5 class="modal-title" id="exampleModalLabel" >Sign up</h5>
+							        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							          <span aria-hidden="true">&times;</span>
+							        </button>
+							      </div>
+							      <form method="post" name="register-form" id="register-form">
+							      <div class="modal-body">
+							          <div class="form-group">
+							            <input type="text" class="form-control" id="username" placeholder="Username" required>
+							            <p id="err_username" style="color: red;text-align: right;"></p>
+							          </div>
+							          <div class="form-group" style="position: relative;">
+							            <input type="password" class="form-control" id="rpwd" placeholder="Password" required>
+							            <div class="fa fa-eye show-rpwd" ></div>
+							            <p id="err_rpwd" style="color: red;text-align: right;"></p>
+							          </div>
+							          <div class="form-group" style="position: relative;">
+							          	<input type="password" class="form-control" id="rcpwd" placeholder="Confirm Password" required>
+							          	<div class="fa fa-eye show-rcpwd" ></div>
+							            <p id="err_rcpwd" style="color: red;text-align: right;"></p>
+							          </div>
+							          <div class="form-group">
+							            <input type="email" class="form-control" id="rmail" placeholder="email@example.com" required>
+							          	<p id="err_rmail" style="color: red;text-align: right;"></p>
+							          </div>
+							          <div class="form-row">
+									    <div class="form-group col-md-6">
+									      <input type="text" class="form-control" id="fname" placeholder="First Name" required="">
+									      <p id="err_fname" style="color: red;text-align: right;"></p>
+									    </div>
+									    <div class="form-group col-md-6">
+									      <input type="text" class="form-control" id="lname" placeholder="Last Name" required="">
+									      <p id="err_lname" style="color: red;text-align: right;"></p>
+									    </div>
+									  </div>
+							       	  <div class="form-group" style="font-size: 12px;color:black ">
+							        	<label>By clicking Sign Up, you agree to our <a href="" style="color:black">Terms</a>, <a href="" style="color:black">Data Policy</a> and <a href="" style="color:black">Cookie Policy</a>. You may receive SMS notifications from us and can opt out at any time.</label>
+							           </div>
+									 <div class="form-group">
+						        		<button type="button" class="btn btn-success" id="register-btn" style="width:100%;">Sign Up</button>
+						        	</div>
+							      </div>
+							      <div class="modal-footer">
+							      		<div class="form-group" style="width:50%;">
+							        		<button type="button" class="btn btn-primary" style="width:100%;">Login With Facebook</button>
+							        	</div>
+							        	<div class="form-group" style="width:50%;">
+							        		<button type="button" class="btn btn-danger" style="width:100%;">Login With Gmail</button>
+							        	</div>
+							      </div>
+							      </form>
+							    </div>
+							  </div>
+							</div>
+						</div>
+						<div class="col-md-5 text-center col-xs-">
+			  				<a class=" btn-bussiness" href="google.com">For Business</a>
+						</div>
+
+					</div>
+					
+				</div> 
+	    		
+				
+			</div>
+		</div>
+	<!-- Menu Bar -->
+	<nav class="navbar navbar-expand-lg sticky-top navbar-light bg-light">
+	    <div class="d-flex flex-grow-1">
+	        <span class="w-100 d-lg-none d-block"></span>
+	        <a class="navbar-brand d-none d-lg-inline-block" href="index.html" style="margin-left: 50px;">
+	            <img src="assets/images/ClickIt.png" style="position: relative; height:60px; width:80px;top: 15px;">
+	        </a>
+	        <a class="navbar-brand d-none d-lg-inline-block" href="index.html" style="margin-left:50px;">
+	            <img src="assets/images/ClickIt_text.png" style="position:relative; left:-65px; top:-5px;height:100px; width:100px;">
+	        </a>
+	        <a class="navbar-brand-two mx-auto d-lg-none d-inline-block" href="index.html">
+	            <img src="assets/images/ClickIt.png" style="position: relative; height: 60px; width: 80px;">
+	        </a>
+	        <a class="navbar-brand-two mx-auto d-lg-none d-inline-block" href="index.html">
+	            <img src="assets/images/ClickIt_Text.png" style="position: relative; left:-65px; top:-5px;height: 60px; width: 80px;">
+	        </a>
+	        <div class="tag_line">
+	        	Just a Click Away!
+	        </div>
+	        <div class="w-100 text-right">
+	            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#myNavbar">
+	                <span class="navbar-toggler-icon"></span>
+	            </button>
+	        </div>
+	    </div>
+	    <div class="collapse navbar-collapse flex-grow-1 text-right" id="myNavbar">
+	        <ul class="navbar-nav ml-auto flex-nowrap">
+	            <li class="nav-item">
+	                <a href="index.html" class="nav-link m-2 menu-item nav-active" title="Home">Home</a>
+	            </li>
+	            <li class="nav-item">
+	                	<div class="dropdown">
+  							<button class="btn btn-secondary dropdown-toggle my-active nav-link m-2 menu-item" type="button" id="Gallery" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="border: 0px; background-color: transparent;" title="Gallery">
+    							Gallery
+  							</button>
+							<div class="dropdown-menu dropdown_menu" aria-labelledby="Gallery">
+							    <a class="dropdown-item" href="images.html">Photos</a>
+							    <a class="dropdown-item" href="videos.html">Videos</a>
+							    <a class="dropdown-item" href="music.html">Music</a>
+							    <a class="dropdown-item my-active" href="trending.html">Trending</a>
+								<a class="dropdown-item" href="weekly-update.html">Weekly top 5</a>
+								</div>
+						</div>
+	            </li>
+	            <li class="nav-item">
+	                <a href="about-artist.html" class="nav-link m-2 menu-item" title="Artists">About Artists</a>
+	            </li>
+	            
+	            <li class="nav-item">
+	                <a href="about.html" class="nav-link m-2 menu-item" title="About Us">About Us</a>
+	            </li>
+	            <li class="nav-item">
+	                <a href="contact-us.html" class="nav-link m-2 menu-item" title="Contact Us">Contact Us</a>
+	            </li>
+	        </ul>
+
+	    </div>
+	</nav>
+	<!-- Background Image -->
+	<div>
+		<img src="assets\images\trending.jpg" height="400px" width="100%">
+		<div style="position: relative;top: -100px;left: 30px; font-size: 40pt; font-weight: bolder; color: #004085; font-family: georgia;">
+		Trending
+		</div>
+	</div>
+	<!-- Trending -->
+	<div class="container">
+		<!-- img -->
+		<div class="container" style="margin-top:10px;margin-bottom: 10px;">
+			<div class="row">
+				<div class="col-md-10 col-sm-10" style="padding:25px;font-size: 35px;color: #333;">
+					Trending Images
+				</div>
+			</div>
+			<div class="row tr-card" style="margin-bottom: 30px;">
+				<div class="col-md-6 tr-item" style="height: 300px;padding: 10px 25px;">
+					<div class="row" style="height: 100%">
+						<div class="col-md-6" style="height: 100%;width: 100%;padding: 0;">
+							<div style="height: 100%;width: 100%;">
+								<img src="assets/images/1.jpg" style="height: 100%;width: 100%;">
+							</div>
+						</div>
+						<div class="col-md-6">
+							<div style="font-size: 25px;margin-bottom: 10px;">
+								<b>Wonder-Women</b>
+							</div>
+							<div style="margin-bottom: 5px;">
+								<span><b>Artist - </b></span>Tom Crus
+							</div>
+							<div style="margin-bottom: 5px;">
+								<span><b>Upload date - </b></span>20/12/2018
+							</div>
+							<div style="margin-bottom: 5px;">
+								<span><b>Like - </b></span>2K
+							</div>
+							<div style="margin-bottom: 5px;">
+								<span><b>Genres - </b></span>Wild Life
+							</div>
+							<div style="margin-bottom: 5px;">
+								<span><b>Country - </b></span>USA
+							</div>
+							<div style="margin:20px 0px 10px 0px;">
+
+								<span><b>Rate - </b></span>
+								<span class="fa fa-star" style="color: blue"></span>
+								<span class="fa fa-star" style="color: green"></span>
+								<span class="fa fa-star" style="color: #c03;"></span>
+								<span class="fa fa-star"></span>
+								<span class="fa fa-star"></span>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-6 tr-item" style="height: 300px;padding: 10px 25px;">
+					<div class="row" style="height: 100%">
+						<div class="col-md-6" style="height: 100%;width: 100%;padding: 0;">
+							<div style="height: 100%;width: 100%;">
+								<img src="assets/images/1.jpg" style="height: 100%;width: 100%;">
+							</div>
+						</div>
+						<div class="col-md-6">
+							<div style="font-size: 25px;margin-bottom: 10px;">
+								<b>Wonder-Women</b>
+							</div>
+							<div style="margin-bottom: 5px;">
+								<span><b>Artist - </b></span>Tom Crus
+							</div>
+							<div style="margin-bottom: 5px;">
+								<span><b>Upload date - </b></span>20/12/2018
+							</div>
+							<div style="margin-bottom: 5px;">
+								<span><b>Like - </b></span>2K
+							</div>
+							<div style="margin-bottom: 5px;">
+								<span><b>Genres - </b></span>Wild Life
+							</div>
+							<div style="margin-bottom: 5px;">
+								<span><b>Country - </b></span>USA
+							</div>
+							<div style="margin:20px 0px 10px 0px;">
+
+								<span><b>Rate - </b></span>
+								<span class="fa fa-star" style="color: blue"></span>
+								<span class="fa fa-star" style="color: green"></span>
+								<span class="fa fa-star" style="color: #c03;"></span>
+								<span class="fa fa-star"></span>
+								<span class="fa fa-star"></span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- video -->
+		<div class="container" style="margin-top:30px;">
+			<div class="row">
+				<div class="col-md-10 col-sm-10" style="padding:25px;font-size: 35px;color: #333;">
+					Trending Videos
+				</div>
+			</div>
+			<div class="row tr-card" style="margin-bottom: 40px;">
+				<div class="col-md-12 tr-item" style="height: 350px;padding: 10px 25px;">
+					<div class="row" style="height: 100%">
+						<div class="col-md-8" style="height: 100%;width: 100%;padding: 0;">
+							<div style="height: 100%;width: 100%;">
+								<video src="assets/videos/Baaghi2.mp4" height="100%" width="100%" controls="" />
+							</div>
+						</div>
+						<div class="col-md-4" style="padding-left: 50px;">
+							<div style="font-size: 25px;margin-bottom: 10px;">
+								<b>Wonder-Women</b>
+							</div>
+							<div style="margin-bottom: 5px;">
+								<span><b>Artist - </b></span>Tom Crus
+							</div>
+							<div style="margin-bottom: 5px;">
+								<span><b>Upload date - </b></span>20/12/2018
+							</div>
+							<div style="margin-bottom: 5px;">
+								<span><b>Like - </b></span>2K
+							</div>
+							<div style="margin-bottom: 5px;">
+								<span><b>Genres - </b></span>Wild Life
+							</div>
+							<div style="margin-bottom: 5px;">
+								<span><b>Country - </b></span>USA
+							</div>
+							<div style="margin:20px 0px 10px 0px;">
+
+								<span><b>Rate - </b></span>
+								<span class="fa fa-star" style="color: blue"></span>
+								<span class="fa fa-star" style="color: green"></span>
+								<span class="fa fa-star" style="color: #c03;"></span>
+								<span class="fa fa-star"></span>
+								<span class="fa fa-star"></span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row tr-card" style="margin-bottom: 40px;">
+				<div class="col-md-12 tr-item" style="height: 350px;padding: 10px 25px;">
+					<div class="row" style="height: 100%">
+						<div class="col-md-8" style="height: 100%;width: 100%;padding: 0;">
+							<div style="height: 100%;width: 100%;">
+								<video src="assets/videos/Baaghi2.mp4" height="100%" width="100%" controls="" />
+							</div>
+						</div>
+						<div class="col-md-4" style="padding-left: 50px;">
+							<div style="font-size: 25px;margin-bottom: 10px;">
+								<b>Wonder-Women</b>
+							</div>
+							<div style="margin-bottom: 5px;">
+								<span><b>Artist - </b></span>Tom Crus
+							</div>
+							<div style="margin-bottom: 5px;">
+								<span><b>Upload date - </b></span>20/12/2018
+							</div>
+							<div style="margin-bottom: 5px;">
+								<span><b>Like - </b></span>2K
+							</div>
+							<div style="margin-bottom: 5px;">
+								<span><b>Genres - </b></span>Wild Life
+							</div>
+							<div style="margin-bottom: 5px;">
+								<span><b>Country - </b></span>USA
+							</div>
+							<div style="margin:20px 0px 10px 0px;">
+
+								<span><b>Rate - </b></span>
+								<span class="fa fa-star" style="color: blue"></span>
+								<span class="fa fa-star" style="color: green"></span>
+								<span class="fa fa-star" style="color: #c03;"></span>
+								<span class="fa fa-star"></span>
+								<span class="fa fa-star"></span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	
+		<!-- Music -->
+		<div class="container" style="margin-top:10px;margin-bottom: 10px;">
+			<div class="row">
+				<div class="col-md-10 col-sm-10" style="padding:25px;font-size: 35px;color: #333;">
+					Trending Music
+				</div>
+			</div>
+			<div class="row tr-card music" style="margin-bottom: 30px;">
+				<div class="col-md-4 tr-item" style="height: 200px;padding: 10px 25px;">
+					<div class="row" style="height: 100%">
+						<div class="col-md-6" style="height: 100%;width: 100%;padding: 0;">
+							<div style="height: 100%;width: 100%;" class="tr-music">
+								<img src="assets/images/music-1.jpg" height="100%" width="100%">
+								<audio src="" controls="" style="" />
+							</div>
+						</div>
+						<div class="col-md-6">
+							<div style="font-size: 18px;margin-bottom: 10px;">
+								<b>Wonder-Women</b>
+							</div>
+							<div style="margin-bottom: 5px;">
+								<span><b>Artist - </b></span>Tom Crus
+							</div>
+							<div style="margin-bottom: 5px;">
+								<span><b>Like - </b></span>2K
+							</div>
+							<div style="margin-bottom: 5px;">
+								<span><b>Genres - </b></span>Wild Life
+							</div>
+							<div style="margin-bottom: 5px;">
+								<span><b>Country - </b></span>USA
+							</div>
+							<div style="margin:15px 0px 10px 0px;">
+
+								<span><b>Rate - </b></span>
+								<span class="fa fa-star" style="color: blue"></span>
+								<span class="fa fa-star" style="color: green"></span>
+								<span class="fa fa-star" style="color: #c03;"></span>
+								<span class="fa fa-star"></span>
+								<span class="fa fa-star"></span>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4 tr-item" style="height: 200px;padding: 10px 25px;">
+					<div class="row" style="height: 100%">
+						<div class="col-md-6" style="height: 100%;width: 100%;padding: 0;">
+							<div style="height: 100%;width: 100%;" class="tr-music">
+								<img src="assets/images/music-1.jpg" height="100%" width="100%">
+								<audio src="" controls="" style="" />
+							</div>
+						</div>
+						<div class="col-md-6">
+							<div style="font-size: 18px;margin-bottom: 10px;">
+								<b>Wonder-Women</b>
+							</div>
+							<div style="margin-bottom: 5px;">
+								<span><b>Artist - </b></span>Tom Crus
+							</div>
+							<div style="margin-bottom: 5px;">
+								<span><b>Like - </b></span>2K
+							</div>
+							<div style="margin-bottom: 5px;">
+								<span><b>Genres - </b></span>Wild Life
+							</div>
+							<div style="margin-bottom: 5px;">
+								<span><b>Country - </b></span>USA
+							</div>
+							<div style="margin:15px 0px 10px 0px;">
+
+								<span><b>Rate - </b></span>
+								<span class="fa fa-star" style="color: blue"></span>
+								<span class="fa fa-star" style="color: green"></span>
+								<span class="fa fa-star" style="color: #c03;"></span>
+								<span class="fa fa-star"></span>
+								<span class="fa fa-star"></span>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4 tr-item" style="height: 200px;padding: 10px 25px;">
+					<div class="row" style="height: 100%">
+						<div class="col-md-6" style="height: 100%;width: 100%;padding: 0;">
+							<div style="height: 100%;width: 100%;" class="tr-music">
+								<img src="assets/images/music-1.jpg" height="100%" width="100%">
+								<audio src="" controls="" style="" />
+							</div>
+						</div>
+						<div class="col-md-6">
+							<div style="font-size: 18px;margin-bottom: 10px;">
+								<b>Wonder-Women</b>
+							</div>
+							<div style="margin-bottom: 5px;">
+								<span><b>Artist - </b></span>Tom Crus
+							</div>
+							<div style="margin-bottom: 5px;">
+								<span><b>Like - </b></span>2K
+							</div>
+							<div style="margin-bottom: 5px;">
+								<span><b>Genres - </b></span>Wild Life
+							</div>
+							<div style="margin-bottom: 5px;">
+								<span><b>Country - </b></span>USA
+							</div>
+							<div style="margin:15px 0px 10px 0px;">
+
+								<span><b>Rate - </b></span>
+								<span class="fa fa-star" style="color: blue"></span>
+								<span class="fa fa-star" style="color: green"></span>
+								<span class="fa fa-star" style="color: #c03;"></span>
+								<span class="fa fa-star"></span>
+								<span class="fa fa-star"></span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+
+	<!-- Footer -->
+	<div class="container-fluid" style="background-color: black;color: white;">
+		<div class="container">
+			<div class="row" >
+				<div class="col-md-4 footer_layout">
+	            <img src="assets/images/ClickIt.png" style="position: relative; height:100px; width:120px;top: -5px;">
+	            <img src="assets/images/ClickIt_text.png" style="position:relative;  top:-5px;height:130px; width:130px;">
+					<div style="color: #C0BEBE"><h6>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque, ducimus, atque. Praesentium suscipit provident explicabo dignissimos nostrum numquam deserunt earum accusantium et fugit.</h6></div><br>
+					<h4>Connect with</h4><br>
+
+					<div class="row">
+						<a href="https://www.facebook.com/" target="_new">
+							<div class="connect-with-icon">
+								<span class="fa fa-facebook"></span>
+							</div>
+						</a>
+						<a href="https://www.twitter.com/" target="_new">
+							<div class="connect-with-icon">
+								<span class="fa fa-twitter"></span>
+							</div>
+						</a>
+						<a href="https://www.google.com/" target="_new">
+							<div class="connect-with-icon">
+								<span class="fa fa-google-plus"></span>
+							</div>
+						</a>
+						<a href="https://www.youtube.com/" target="_new">
+							<div class="connect-with-icon">
+								<span class="fa fa-youtube"></span>
+							</div>
+						</a>
+						<a href="https://www.instagram.com/" target="_new">
+							<div class="connect-with-icon">
+								<span class="fa fa-instagram"></span>
+							</div>
+						</a>
+						
+					</div>
+				</div>
+				<div class="col-md-4 footer_layout">
+					<h3>Gallery</h3><br><br>
+					<div class="row">
+						<div class="col-md-6">
+							<a  href="images.html" style="text-decoration: none;color: #fff"><h6 class="footer_gallery">Photos</h6></a>
+							<a  href="videos.html" style="text-decoration: none;color: #fff"><h6 class="footer_gallery">Videos</h6></a>
+							<a  href="music.html" style="text-decoration: none;color: #fff"><h6 class="footer_gallery">Music</h6></a>
+							
+						</div>
+						<div class="col-md-6">
+							<a  href="about-artist.html" style="text-decoration: none;color: #fff"><h6 class="footer_gallery">About Artist</h6></a>
+							<a  href="images.html" style="text-decoration: none;color: #fff"><h6 class="footer_gallery">Weekly results</h6></a>
+							<a  href="images.html" style="text-decoration: none;color: #fff"><h6 class="footer_gallery">Trending</h6></a>
+							
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4 footer_layout">
+					<h3>Newsletter</h3><br><br>
+					<h6>Sign up for our mailling list to get latest updates videos and upcomming Movie</h6><br>
+					<input type="email" name="email" placeholder="Email Address" style="background-color: black;color: white; padding: 7px 20px; " ><br><br>
+					<textarea placeholder="Comments" rows="3" cols="22" style="background-color: black;color: white; padding: 7px 20px; border: 2px solid white"></textarea>
+					<img src="assets/images/send.png" height="30px" width="40px" style="position: relative; top: -40px;cursor: pointer;">
+					<br><br><br>
+
+				</div>
+				
+			</div>
+			<hr style=" border:1px solid #dfdfdf;">
+			<div class="row">
+				<div class="col-md-auto" style="margin-bottom: 12px;margin-top: 5px;">
+					<h6 class="footer_tags">About</h6>
+				</div>
+				<div class="col-md-auto"style="margin-bottom: 12px;margin-top: 5px;">
+					<h6 class="footer_tags">Careers</h6>
+				</div>
+				<div class="col-md-auto">
+					<h6 class="footer_tags"style="margin-bottom: 12px;margin-top: 5px;">Terms of Use</h6>
+				</div>
+				<div class="col-md-auto">
+					<h6 class="footer_tags"style="margin-bottom: 12px;margin-top: 5px;">Privacy Policy</h6>
+				</div>
+				<div class="offset-4 col-md-auto"style="margin-bottom: 12px;margin-top: 5px;">
+					<h6>© 2019 ClickIt. All Rights Reserved</h6>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script type="text/javascript" src="assets/js/jquery.js"></script>
+	<script type="text/javascript" src="assets/bootstrap/js/bootstrap.min.js"></script> 
+</body>
+</html>

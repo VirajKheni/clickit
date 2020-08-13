@@ -1,0 +1,350 @@
+.btn-login
+{
+	margin-left: 10px;
+	padding:0px 10px;
+	font-weight: bolder;
+	color:#eee;
+	letter-spacing: 1px;
+	cursor: pointer;
+	border-radius: 10px;
+}
+.btn-login:hover{
+	background-color: #fff;
+	color:#dc3545;
+	transition: 0.7s;
+}
+.btn-bussiness:hover{
+	background-color: #fff;
+	color:#dc3545;
+	transition: 0.7s;
+	border:1px solid #fff;
+	text-decoration: none;
+}
+.btn-bussiness
+{
+	border-radius:7px;
+	margin-left: 20px;
+	border:1px solid #f3f3f3;
+	color:#eee;
+	cursor: pointer;
+	text-decoration: none;
+	padding:0px 10px;
+}
+.btn-seemore{
+	padding:1px 8px 2px 8px;
+	color:#dc3545;
+	letter-spacing: 1px;
+	cursor: pointer;
+	border-radius:5px;
+	border:1px solid #dc3545;
+	text-decoration: none;
+}
+.btn-seemore:hover{
+	text-decoration: none;
+	color:#fff;
+	background: #dc3545;
+	transition: 0.5s;
+}
+.cards .cards-item{
+	margin-bottom: 30px;
+	padding-bottom: 10px;
+}
+
+.cards .cards-item .cards-item-full{
+	height: 380px;
+}
+
+.cards .cards-item .cards-item-full .cards-img{
+	height: 300px;
+	background: #333;
+	position: relative;
+	overflow: hidden;
+}
+.cards .cards-item:hover{
+	box-shadow: 0px 10px 10px #333;
+	transition: 0.5s;
+
+}
+.cards .cards-item .cards-item-full .cards-img:hover img{
+	transform: scale(1.2,1.2);
+	opacity: 0.8;
+	cursor: pointer;	
+	transition: 1.2s;
+}
+.cards .cards-item .cards-item-full .cards-img-name{
+	height: 35px;
+	font-size: 20px;
+	padding: 0px 5px;
+	color:#111;
+	font-weight: bolder;
+	
+}
+.cards .cards-item .cards-item-full .cards-owner-name{
+	height: 23px;
+	padding: 0px 5px; 
+}
+.cards .cards-item .cards-item-full .cards-uptime{
+	height: 20px;
+	padding: 0px 5px;
+}
+.music .cards .cards-item .cards-item-full{
+	height: 230px;
+}
+.music .cards-item .cards-item-full .cards-img{
+	height: 150px;
+}
+.music .cards-item .cards-item-full .cards-img audio{
+	display: none;
+	width:80%;
+	position: absolute;
+	bottom:15px;
+	left:18px;
+	background: transparent;opacity: 1;
+}
+.music .cards-item .cards-item-full .cards-img:hover audio{
+	display:inline-block;
+	background: transparent;opacity: .5;
+}
+.footer_gallery{
+	font-weight: bolder;
+}
+.footer_tag{
+color: #C0BEBE;
+}
+.footer_gallery:hover,.footer_tags:hover{
+	color: red;
+	cursor: pointer;
+	transition: 0.7s;
+}
+.footer_layout{
+	margin-top: 25px;
+	margin-bottom: 10px;
+}
+.connect-with-icon
+{
+	padding: 5px;
+	margin-left:24px;
+	background: #333;
+	width: 35px;
+	border-radius:50%;
+	text-align: center;
+}
+
+.connect-with-icon:hover
+{
+	background: #eb1436;
+	cursor: pointer;
+	transition:.5s;
+}
+.connect-with-icon:hover a
+{
+	text-decoration: none;
+}
+.connect-with-icon .fa{
+	font-size: 18px;
+	color:#fff;
+}
+.like-deactive{
+	padding: 5px;
+	margin-left:24px;
+	background: #333;
+	width: 35px;
+	border-radius:50%;
+	text-align: center;	
+}
+.like-deactive:hover
+{
+	background: #eb1436;
+	cursor: pointer;
+	transition:.5s;
+}
+.like-deactive .fa{
+	font-size: 18px;
+	color:#fff;
+}
+.tr-item:hover
+{
+	box-shadow: 0px 10px 10px #333;
+	transition: 0.5s;
+}
+.music .tr-music audio{
+	display: none;
+	width:80%;
+	position: absolute;
+	bottom:15px;
+	left:18px;
+	background: transparent;opacity: 1;
+}
+.music .tr-music:hover audio{
+	display:inline-block;
+	background: transparent;opacity: .5;
+}
+.artists_profile{
+	height: 400px;
+	width: 300px;
+	border: 1px solid black;
+}
+.artists_details{
+	text-decoration: none;
+	color: black;
+	font-family: georgia;
+	font-size: 30pt;
+	position: relative;
+	top: -150px;
+	left: 50px;
+}
+.artists_details:hover{
+	text-decoration: none;
+	color: red;
+}
+.artists_content{
+	text-decoration: none;
+	color: black;
+	font-family: georgia;
+	font-size: 20pt;
+	position: relative;
+	top: -110px;
+	left: -150px;
+}
+
+.artists_content:hover{
+	text-decoration: none;
+	color: black;
+}
+.artists_personal{
+	color: black;
+	font-family: georgia;
+	font-size: 18pt;
+	position: relative;
+	top: -210px;
+	left: 350px;
+}
+.admin-profile{
+	border-radius: 50%;
+	position: relative;
+	top: -130px;
+	left: 350px;
+}
+.admin-profile:hover{
+	opacity: .7;
+}
+.artists_profile{
+	height: 400px;
+	width: 300px;
+	border: 1px solid black;
+}
+.artists_details{
+	text-decoration: none;
+	color: #004085;
+	font-family: georgia;
+	font-size: 30pt;
+	position: relative;
+	top: -150px;
+	left: 50px;
+}
+.artists_details:hover{
+	text-decoration: none;
+	color: red;
+}
+.artists_content{
+	text-decoration: none;
+	color: black;
+	font-family: georgia;
+	font-size: 20pt;
+	position: relative;
+	top: -110px;
+	left: -150px;
+}
+
+.artists_content:hover{
+	text-decoration: none;
+	color: black;
+}
+.artists_personal{
+	color: black;
+	font-family: georgia;
+	font-size: 18pt;
+	position: relative;
+	top: -210px;
+	left: 350px;
+}
+.admin-profile{
+	border-radius: 50%;
+	position: relative;
+	top: -130px;
+	left: 350px;
+}
+.admin-profile:hover{
+	opacity: .7;
+}
+.show-pwd,.show-rpwd,.show-rcpwd{
+	position: absolute;
+	top:3px;
+	right:10px;
+	padding: 8px;
+	border-radius: 50%;
+}
+.show-pwd:hover{
+	background: #eee;
+	cursor: pointer;
+}
+.show-rpwd:hover{
+	background: #eee;
+	cursor: pointer;
+}
+.show-rcpwd:hover{
+	background: #eee;
+	cursor: pointer;
+}	
+.tag_line{
+	position: relative;
+	top: 30px;
+	font-size: 25px;
+	height: 50px;
+	width: 600px;
+	font-weight: bolder;
+	color: red;
+	text-decoration: underline;
+	font-family: georgia;
+	font-style: italic;
+}
+.about_head{
+	position: relative;
+	left: 10px;
+	top: 20px;
+	font-size: 35px;
+	color: #2b78cc;
+	text-decoration: underline;
+}
+.about_content{
+position: relative;
+top: -30px;
+font-size: 20px;
+color: #546d88;
+left: 500px;
+width: 650px;
+}
+.about_rating{
+margin: 0px;
+background-color: #57d8b2;
+height: 300px;
+widows: 100%;
+}
+.rating_head{
+position: relative;
+color: #dfdfdf;
+font-size: 55px;
+}
+.rating_content{
+position: relative;
+color: #dfdfdf;
+font-size: 20px;
+}
+@media screen  {
+	
+}
+
+.my-active{
+	color: #dc3545 !important;
+	font-weight: bolder;
+}
